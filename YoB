@@ -1,0 +1,20 @@
+import datetime
+def calculate_birth_year(age):
+    current_year = datetime.datetime.now().year
+    birth_year = current_year - age
+    return birth_year
+def main():
+    while True:
+        try:
+            age = int(input("Enter your age: "))
+            if age < 0 or age > 101:
+                print("INVALID,Enter a valid age.")
+            else:
+                birth_year = calculate_birth_year(age)
+                print(f"You were born in approximately {birth_year}.")
+                break
+        except ValueError:
+            print("Please enter a valid integer for your age.")
+
+if __name__ == "__main__":
+    main()
